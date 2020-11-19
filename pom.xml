@@ -9,7 +9,7 @@
    <groupId>acmeair-mainservice-java</groupId>
    <version>3.3</version>
    <artifactId>acmeair-mainservice-java</artifactId>
-   <packaging>jar</packaging>
+   <packaging>war</packaging>
    <name>acmeair-mainservice-java</name>
    <properties>
       <version.maven-war-plugin>3.2.2</version.maven-war-plugin>
