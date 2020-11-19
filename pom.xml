@@ -12,7 +12,7 @@
    <packaging>jar</packaging>
    <name>acmeair-mainservice-java</name>
    <properties>
-      <version.maven-jar-plugin>3.2.0</version.maven-jar-plugin>
+      <version.maven-war-plugin>3.2.2</version.maven-war-plugin>
       <version.download-maven-plugin>1.4.0</version.download-maven-plugin>
       <version.maven-surefire-plugin>3.0.0-M1</version.maven-surefire-plugin>
       <version.maven-failsafe-plugin>3.0.0-M1</version.maven-failsafe-plugin>
@@ -25,7 +25,7 @@
       <testServerHttpPort>9080</testServerHttpPort>
       <testServerHttpsPort>9443</testServerHttpsPort>
       <!-- end::appdetails[] -->
-      <jarContext>${app.name}</jarContext>
+      <warContext>${app.name}</warContext>
       <package.file>${project.build.directory}/${app.name}.zip</package.file>
       <packaging.type>usr</packaging.type>
    </properties>
@@ -60,7 +60,7 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jar-plugin</artifactId>
-            <version>${version.maven-jar-plugin}</version>
+            <version>${version.maven-war-plugin}</version>
             <configuration>
                <failOnMissingWebXml>false</failOnMissingWebXml>
                <!--<warName>${project.artifactId}</warName>-->
@@ -152,7 +152,7 @@
                      <systemPropertyVariables>
                         <liberty.test.port>${testServerHttpPort}</liberty.test.port>
                         <liberty.test.https.port>${testServerHttpsPort}</liberty.test.https.port>
-                        <jar.name>${jarContext}</jar.name>
+                        <war.name>${jarContext}</war.name>
                      </systemPropertyVariables>
                      <!-- end::testsysprops[] -->
                   </configuration>
