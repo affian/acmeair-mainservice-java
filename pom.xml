@@ -12,7 +12,7 @@
    <packaging>jar</packaging>
    <name>acmeair-mainservice-java</name>
    <properties>
-      <version.maven-war-plugin>3.2.2</version.maven-war-plugin>
+      <version.maven-jar-plugin>3.2.0</version.maven-jar-plugin>
       <version.download-maven-plugin>1.4.0</version.download-maven-plugin>
       <version.maven-surefire-plugin>3.0.0-M1</version.maven-surefire-plugin>
       <version.maven-failsafe-plugin>3.0.0-M1</version.maven-failsafe-plugin>
@@ -25,7 +25,7 @@
       <testServerHttpPort>9080</testServerHttpPort>
       <testServerHttpsPort>9443</testServerHttpsPort>
       <!-- end::appdetails[] -->
-      <warContext>${app.name}</warContext>
+      <jarContext>${app.name}</jarContext>
       <package.file>${project.build.directory}/${app.name}.zip</package.file>
       <packaging.type>usr</packaging.type>
    </properties>
@@ -59,8 +59,8 @@
       <plugins>
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>${version.maven-war-plugin}</version>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>${version.maven-jar-plugin}</version>
             <configuration>
                <failOnMissingWebXml>false</failOnMissingWebXml>
                <!--<warName>${project.artifactId}</warName>-->
@@ -105,7 +105,7 @@
                <bootstrapProperties>
                   <default.http.port>${testServerHttpPort}</default.http.port>
                   <default.https.port>${testServerHttpsPort}</default.https.port>
-                  <app.context.root>${warContext}</app.context.root>
+                  <app.context.root>${jarContext}</app.context.root>
                </bootstrapProperties>
                <!-- end::bootstrap[] -->
             </configuration>
@@ -152,7 +152,7 @@
                      <systemPropertyVariables>
                         <liberty.test.port>${testServerHttpPort}</liberty.test.port>
                         <liberty.test.https.port>${testServerHttpsPort}</liberty.test.https.port>
-                        <war.name>${warContext}</war.name>
+                        <jar.name>${jarContext}</jar.name>
                      </systemPropertyVariables>
                      <!-- end::testsysprops[] -->
                   </configuration>
